@@ -37,3 +37,16 @@ for (const aDiv of divs) {
   // set the third argument to `true`!
   aDiv.addEventListener('click', capture, true)
 }
+
+const divs = document.querySelectorAll('div')
+ 
+function bubble(e) {
+  // stop! that! propagation!
+  e.stopPropagation()
+ 
+  console.log(this.firstChild.nodeValue.trim() + ' bubbled')
+}
+ 
+for (const aDiv of divs) {
+  aDiv.addEventListener('click', bubble)
+}
